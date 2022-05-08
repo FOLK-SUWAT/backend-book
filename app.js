@@ -7,21 +7,13 @@ var usersRouter = require("./routes/users");
 var bookRouter = require("./routes/book");
 var bodyParser = require('body-parser');
 const cors = require('cors');
-
+require("dotenv").config();
 var app = express();
 
+const Port = process.env.PORT || 8080;
 
-var whitelist = ['http://localhost:3000', 'http://example2.com']
-var corsOptionsDelegate = function (req, callback) {
-  var corsOptions
-  console.log(req.header('Origin'))
-  if (whitelist.indexOf(req.header('Origin')) !== -1) {
-    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
-  } else {
-    corsOptions = { origin: false } // disable CORS for this request
-  }
-  callback(null, corsOptions) // callback expects two parameters: error and options
-}
+
+
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -38,7 +30,7 @@ app.use("/api/users", usersRouter);
 app.use("/api/book", bookRouter);
 
 //app.use(errorHandler)
-app.listen(8080, () => console.log(`Example app listening on port 8080`))
+app.listen(Port, () => console.log(`Example app listening on port ${Port}`))
 
 module.exports = app;
 
