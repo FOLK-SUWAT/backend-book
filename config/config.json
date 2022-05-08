@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "testdb",
+    "username": "stud_backend",
+    "password": "65!JKskOIJ^%dsz#",
+    "database": "stud_backend",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "port" : "3306"

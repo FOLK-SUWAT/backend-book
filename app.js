@@ -6,7 +6,6 @@ var logger = require("morgan");
 var usersRouter = require("./routes/users");
 var bookRouter = require("./routes/book");
 var bodyParser = require('body-parser');
-var errorHandler = require('./middleware/error-handler');
 const cors = require('cors');
 
 var app = express();
